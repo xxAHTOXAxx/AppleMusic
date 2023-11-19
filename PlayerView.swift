@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct PlayerView: View {
@@ -10,28 +9,40 @@ struct PlayerView: View {
                 .padding(.horizontal, 20)
             
             HStack {
+//                ZStack {
+//                    RoundedRectangle(cornerRadius: 10)
+//                        .foregroundColor(Color(UIColor.systemGray4))
+//                        .frame(width: 40, height: 40) // Изменяем размеры для квадрата
+//                        .padding(.trailing, 10) // Уменьшение отступа
+//                        .offset(x: -25)
+//                    
+//                }
+                //Image(systemName: "play.fill")
+                //Image("notExecuted")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 40, height: 40)
                 
                 Text("Не исполняется")
                 
                 Button(action: {
-                    // Действие при нажатии кнопки Play
+                   
                 }) {
                     Image(systemName: "play.fill")
                         .foregroundColor(.black)
-                        //.padding()
                         .imageScale(.large)
                 }
-                .padding(.leading, 50)
+                .padding(.leading, 10) // Уменьшение отступа
+                .padding(.trailing, 10) // Уменьшение отступа
                 
                 Button(action: {
-                    // Действие при нажатии кнопки Next
+                    
                 }) {
                     Image(systemName: "forward.fill")
                         .foregroundColor(.black)
-                        //.padding()
                         .imageScale(.large)
                 }
-                .padding(.leading, 30)
+                .padding(.trailing, -10)
             }
             .padding(.leading, 20)
         }
