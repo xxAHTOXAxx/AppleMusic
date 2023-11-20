@@ -2,12 +2,7 @@ import SwiftUI
 
 struct EditView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State private var isSelected: Bool
     @State private var items = ModelItems.arrayItems
-    
-    init(isSelected: Bool) {
-            _isSelected = State(initialValue: isSelected)
-        }
     
     func move(from source: IndexSet, to destination: Int) {
         items.move(fromOffsets: source, toOffset: destination)
@@ -16,12 +11,12 @@ struct EditView: View {
     @ViewBuilder var body: some View {
         NavigationView {
             List {
-                ForEach(items, id: \.self) { item in
+                ForEach(items.indices, id: \.self) { index in
                     HStack {
                         Button(action: {
-                          isSelected.toggle()
-                        }, label: {
-                            if isSelected {
+                            items[index].isSelected.toggle()
+                        }) {
+                            if items[index].isSelected {
                                 Image(systemName: "checkmark.circle.fill")
                                     .foregroundColor(.red)
                                     .imageScale(.large)
@@ -30,12 +25,12 @@ struct EditView: View {
                                     .foregroundColor(Color(UIColor.systemGray5))
                                     .imageScale(.large)
                             }
-                        })
+                        }
                         
-                        Image(systemName: item.itemImage)
+                        Image(systemName: items[index].itemImage)
                             .foregroundColor(Color.red)
                             .padding(.trailing, 8)
-                        Text(item.name)
+                        Text(items[index].name)
                     }
                 }
                 .onMove(perform: move)
@@ -45,7 +40,7 @@ struct EditView: View {
             .navigationBarItems(trailing:
                                     Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
-            }) {
+                }) {
                 Text("Готово")
                     .foregroundColor(Color.red)
             }
@@ -55,5 +50,5 @@ struct EditView: View {
 }
 
 #Preview {
-    EditView(isSelected: false)
+    EditView()
 }

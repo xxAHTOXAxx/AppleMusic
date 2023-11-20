@@ -9,21 +9,16 @@ struct PlayerView: View {
                 .padding(.horizontal, 20)
             
             HStack {
-//                ZStack {
-//                    RoundedRectangle(cornerRadius: 10)
-//                        .foregroundColor(Color(UIColor.systemGray4))
-//                        .frame(width: 40, height: 40) // Изменяем размеры для квадрата
-//                        .padding(.trailing, 10) // Уменьшение отступа
-//                        .offset(x: -25)
-//                    
-//                }
-                //Image(systemName: "play.fill")
-                //Image("notExecuted")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 40, height: 40)
+                Image("notExecuted")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .padding(.trailing, 10)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .offset(x: -30)
+                    .colorMultiply(Color(UIColor.systemGray4))
                 
                 Text("Не исполняется")
+                    .offset(x: -30)
                 
                 Button(action: {
                    
@@ -32,8 +27,8 @@ struct PlayerView: View {
                         .foregroundColor(.black)
                         .imageScale(.large)
                 }
-                .padding(.leading, 10) // Уменьшение отступа
-                .padding(.trailing, 10) // Уменьшение отступа
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
                 
                 Button(action: {
                     

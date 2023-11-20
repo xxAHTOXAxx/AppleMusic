@@ -1,14 +1,14 @@
 import Foundation
 import SwiftUI
 
-struct ModelItems: Hashable {
+struct ModelItems: Equatable, Hashable {
     var itemImage: String
     var name: String
     var isSelected: Bool
 }
 
 extension ModelItems {
-    static var arrayItems: [ModelItems] = [
+    @State static var arrayItems: [ModelItems] = [
         ModelItems(itemImage: "music.note.list", name: "Плейлисты", isSelected: false),
         ModelItems(itemImage: "music.mic", name: "Артисты", isSelected: false),
         ModelItems(itemImage: "square.stack", name: "Альбомы", isSelected: false),
