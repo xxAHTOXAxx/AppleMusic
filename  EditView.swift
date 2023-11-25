@@ -35,7 +35,6 @@ struct EditView: View {
                 }
                 .onMove(perform: move)
             }
-            .navigationBarBackButtonHidden()
             .navigationTitle("Медиатека")
             .navigationBarItems(trailing:
                                     Button(action: {

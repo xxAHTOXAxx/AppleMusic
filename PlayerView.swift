@@ -14,11 +14,11 @@ struct PlayerView: View {
                     .frame(width: 40, height: 40)
                     .padding(.trailing, 10)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .offset(x: -30)
+                    .offset(x: -40)
                     .colorMultiply(Color(UIColor.systemGray4))
                 
                 Text("Не исполняется")
-                    .offset(x: -30)
+                    .offset(x: -40)
                 
                 Button(action: {
                    
@@ -27,8 +27,7 @@ struct PlayerView: View {
                         .foregroundColor(.black)
                         .imageScale(.large)
                 }
-                .padding(.leading, 10)
-                .padding(.trailing, 10)
+                .offset(x: 20)
                 
                 Button(action: {
                     
@@ -38,8 +37,8 @@ struct PlayerView: View {
                         .imageScale(.large)
                 }
                 .padding(.trailing, -10)
+                .offset(x: 25)
             }
-            .padding(.leading, 20)
         }
     }
 }

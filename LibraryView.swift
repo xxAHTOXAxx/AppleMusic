@@ -18,13 +18,15 @@ struct LibraryView: View {
             .accentColor(.red)
             .navigationTitle("Медиатека")
             .navigationBarItems(trailing:
-                                    NavigationLink(destination: EditView()) {
+                                    NavigationLink(destination: withAnimation(nil) {
+                                        EditView()
+                                            .navigationBarBackButtonHidden(true)
+                                    }) {
                 Text("Править")
                     .foregroundColor(Color.red)
             }
             )
         }
-        .navigationBarBackButtonHidden()
     }
 }
 
