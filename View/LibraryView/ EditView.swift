@@ -9,7 +9,6 @@ struct EditView: View {
     }
     
     @ViewBuilder var body: some View {
-        NavigationView {
             List {
                 ForEach(items.indices, id: \.self) { index in
                     HStack {
@@ -35,16 +34,6 @@ struct EditView: View {
                 }
                 .onMove(perform: move)
             }
-            .navigationTitle("Медиатека")
-            .navigationBarItems(trailing:
-                                    Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-                }) {
-                Text("Готово")
-                    .foregroundColor(Color.red)
-            }
-            )
-        }
     }
 }
 
