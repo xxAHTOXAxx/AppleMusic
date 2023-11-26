@@ -9,13 +9,18 @@ struct PlayerView: View {
                 .padding(.horizontal, 20)
             
             HStack {
-                Image("notExecuted")
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    .padding(.trailing, 10)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .offset(x: -40)
-                    .colorMultiply(Color(UIColor.systemGray4))
+                RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(Color(UIColor.systemGray4))
+                            .frame(width: 40, height: 40)
+                            .overlay(
+                                Image("notExecuted")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .colorMultiply(Color(UIColor.systemGray4))
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    //.padding(.leading, -20)
+                            )
+                            .offset(x: -45)
                 
                 Text("Не исполняется")
                     .offset(x: -40)
@@ -43,8 +48,6 @@ struct PlayerView: View {
     }
 }
 
-struct Player_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerView()
-    }
+#Preview {
+    PlayerView()
 }

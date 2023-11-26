@@ -9,9 +9,9 @@ struct LazyVGridView: View {
                     Text(title)
                         .font(.title)
                         .fontWeight(.bold)
-                        .padding(.leading, -10)
-            //ScrollView(.vertical, showsIndicators: false) {
-              // LazyVGrid(columns: columns, spacing: 6) {
+                        .padding(.leading, 18)
+            ScrollView(.vertical, showsIndicators: false) {
+               LazyVGrid(columns: columns, alignment: .leading) {
                     ForEach (items, id: \.self) { item in
                         HStack(spacing: 6) {
                             Image(item.itemImage)
@@ -32,14 +32,23 @@ struct LazyVGridView: View {
                         }
                         .padding(1)
                         .background(Color.white)
-                        .padding(.leading, -20)
-                        //.padding(.horizontal, 10)
+                        //.padding(.leading, -20)
+                        .padding(.horizontal, 18)
+//                        Divider().background(Color(UIColor.systemGray5))
+                        VStack {
+                            Spacer()
+                            Divider().background(Color(UIColor.systemGray5))
+                                .frame(height: 1)
+                                .padding(.leading, 110)
+                                .padding(.horizontal, 18)
+                            
+                        }
                     }
                 }
             }
         }
-   //}
-//}
+   }
+}
 
 #Preview {
     LazyVGridView()

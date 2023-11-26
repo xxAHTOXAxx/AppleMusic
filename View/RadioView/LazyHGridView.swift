@@ -30,7 +30,7 @@ struct LazyHGridView: View {
                     .padding(3)
                     .background(Color.white)
                     .frame(width: 355, height: 300)
-                    .padding(.leading, 10)
+                    .padding(.leading, 15)
                 }
             }
         }

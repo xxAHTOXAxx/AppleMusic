@@ -34,6 +34,7 @@ struct EditView: View {
                 }
                 .onMove(perform: move)
             }
+            .listStyle(InsetListStyle())
     }
 }
 

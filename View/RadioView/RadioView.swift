@@ -5,13 +5,14 @@ struct RadioView: View {
         NavigationView {
           ScrollView (.vertical, showsIndicators: false) {
                 VStack {
+                    Divider().background(Color(UIColor.systemGray5))
                     LazyHGridView()
+                    Divider().background(Color(UIColor.systemGray5))
                     LazyVGridView()
                 }
-                .navigationTitle("Радио")
-                
+               .navigationTitle("Радио")
+              
             }
-          //.padding(.leading, -5)
         }
     }
 }
