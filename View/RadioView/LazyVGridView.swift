@@ -32,16 +32,13 @@ struct LazyVGridView: View {
                         }
                         .padding(1)
                         .background(Color.white)
-                        //.padding(.leading, -20)
                         .padding(.horizontal, 18)
-//                        Divider().background(Color(UIColor.systemGray5))
                         VStack {
                             Spacer()
                             Divider().background(Color(UIColor.systemGray5))
                                 .frame(height: 1)
                                 .padding(.leading, 110)
                                 .padding(.horizontal, 18)
-                            
                         }
                     }
                 }

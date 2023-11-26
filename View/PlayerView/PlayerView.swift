@@ -18,7 +18,6 @@ struct PlayerView: View {
                                     .frame(width: 40, height: 40)
                                     .colorMultiply(Color(UIColor.systemGray4))
                                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                                    //.padding(.leading, -20)
                             )
                             .offset(x: -45)
                 
